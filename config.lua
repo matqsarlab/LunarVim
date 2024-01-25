@@ -81,7 +81,33 @@ lvim.plugins = {
   },
   {
     'echasnovski/mini.indentscope',
-    version = '*',
-    config = function() require('mini.indentscope').setup() end
+    version = false,
+    config = function() require('mini.indentscope').setup() end,
   },
+  {
+    "christoomey/vim-tmux-navigator",
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+    },
+    keys = {
+      { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+    }
+  },
+  -- DO TESTOW
+  -- {
+  --   'stevearc/oil.nvim',
+  --   opts = {},
+  --   -- Optional dependencies
+  --   dependencies = { "nvim-tree/nvim-web-devicons" },
+  --   config = function() require("oil").setup() end,
+  --   vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" }),
+  -- },
 }
