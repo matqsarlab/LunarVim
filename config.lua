@@ -101,6 +101,10 @@ lvim.plugins = {
       { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     }
   },
+  -- Color Picker
+  {
+    "ziontee113/color-picker.nvim",
+  },
   -- DO TESTOW
   -- {
   --   'stevearc/oil.nvim',
@@ -110,4 +114,34 @@ lvim.plugins = {
   --   config = function() require("oil").setup() end,
   --   vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" }),
   -- },
+  {
+    "simrat39/rust-tools.nvim",
+    {
+      "saecki/crates.nvim",
+      version = "v0.3.0",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      config = function()
+        require("crates").setup {
+          null_ls = {
+            enabled = true,
+            name = "crates.nvim",
+          },
+          popup = {
+            border = "rounded",
+          },
+        }
+      end,
+    },
+  },
+  {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require 'colorizer'.setup({
+        '*', -- Highlight all files, but customize some others.
+        -- css = { rgb_fn = true, },
+      }, { mode = 'background', rgb_fn = true, hsl_fn = true })
+    end,
+
+  },
+  { 'KabbAmine/vCoolor.vim' },
 }
