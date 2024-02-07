@@ -133,15 +133,23 @@ lvim.plugins = {
       end,
     },
   },
-  {
-    'norcalli/nvim-colorizer.lua',
-    config = function()
-      require 'colorizer'.setup({
-        '*', -- Highlight all files, but customize some others.
-        -- css = { rgb_fn = true, },
-      }, { mode = 'background', rgb_fn = true, hsl_fn = true })
-    end,
+  -- {
+  --   'norcalli/nvim-colorizer.lua',
+  --   config = function()
+  --     require 'colorizer'.setup({
+  --       '*', -- Highlight all files, but customize some others.
+  --       -- css = { rgb_fn = true, },
+  --     }, { mode = 'background', rgb_fn = true, hsl_fn = true })
+  --   end,
 
-  },
+  -- },
   { 'KabbAmine/vCoolor.vim' },
+  {
+    'rrethy/vim-hexokinase',
+    build = "make hexokinase",
+    init = function()
+      vim.g.Hexokinase_highlighters = { "virtual" }
+      vim.g.Hexokinase_virtualText = ""
+    end,
+  },
 }
