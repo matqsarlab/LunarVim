@@ -28,6 +28,13 @@ formatters.setup {
     filetypes = { "typescript", "typescriptreact" },
   },
 }
+-- color number of line
+vim.api.nvim_command([[
+    augroup ChangeBackgroudColour
+        autocmd colorscheme * :hi LineNr guifg=#97BE0D
+    augroup END
+]])
+
 
 -- Additional Plugins
 lvim.plugins = {
@@ -149,7 +156,7 @@ lvim.plugins = {
     build = "make hexokinase",
     init = function()
       vim.g.Hexokinase_highlighters = { "virtual" }
-      vim.g.Hexokinase_virtualText = ""
+      vim.g.Hexokinase_virtualText = "󱨈"
     end,
   },
 }
