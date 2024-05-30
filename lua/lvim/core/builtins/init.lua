@@ -21,6 +21,8 @@ local builtins = {
   "lvim.core.lualine",
   "lvim.core.alpha",
   "lvim.core.mason",
+  "lvim.core.rust",
+  "lvim.core.vimtex",
 }
 
 function M.config(config)
