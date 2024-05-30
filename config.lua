@@ -160,4 +160,5 @@ lvim.plugins = {
       vim.g.Hexokinase_virtualText = "󱨈"
     end,
   },
+  { "lervag/vimtex" }
 }
